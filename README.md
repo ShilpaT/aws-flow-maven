@@ -12,6 +12,8 @@ The end goal is to get the weaving to happen at compile time.
 
 However when running this the workflows are not working as expected. Its completly ignoring the @Asynchronous annotation as its resulting in a not ready state. As a result it will cancel the scheduling the activity we wish to execute.
 
+I have created a simple application with a single workflow and activity to show the issues that I'm experiencing. This version has been exported via eclipse and works, but get the error shown when building via the POM.
+
 ````
 Start with message: With Comp
 Created Workers
@@ -47,8 +49,6 @@ java.lang.IllegalStateException: not ready
         at com.amazonaws.services.simpleworkflow.flow.worker.AsyncDecider$WorkflowExecuteAsyncScope.doAsync(AsyncDecider.java:70)
 DECIDER DOING FINALLY
 ````
-
-I have created a simple application with a single workflow and activity to show the issues that I'm experiencing. 
 
 Having compared the contents of the generated jar from both eclipse and maven builds there is nothing obviously different to me.
 
