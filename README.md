@@ -6,11 +6,11 @@ Has anyone been able to compile an application with Java 1.8 + AWS Flow + Maven?
 
 I have an established Java application which has been created with Java 1.8 it uses the AWS library's and AWS flow framework. I'm looking to now automate the build of the product, I opted to use Maven. Until this point the project was exported manually within eclipse.
 
-I have reached a point where I can build a Jar which contains our generated workflow classes ( external cleints + factories ) along with what I understand to be the aspect classes ( xxxxx$1.class, xxxxx$2.class ).
+I have reached a point where I can build a Jar which contains our generated workflow classes ( external clients + factories ) along with what I understand to be the aspect classes ( xxxxx$1.class, xxxxx$2.class ).
 
 The end goal is to get the weaving to happen at compile time. 
 
-However when running this the workflows are not working as expected. Its completly ignoring the @Asynchronous annotation as its resulting in a not ready state. As a result it will cancel the scheduling the activity we wish to execute.
+However when running the maven built jar the workflows are not working as expected. The application completly ignoring the @Asynchronous annotation and results in a not ready state. As a result it will cancel the scheduling the activity we wish to execute.
 
 I have created a simple application with a single workflow and activity to show the issues that I'm experiencing. This version has been exported via eclipse and works, but get the error shown when building via the POM.
 
@@ -54,7 +54,7 @@ Having compared the contents of the generated jar from both eclipse and maven bu
 
 I have searched the net for something useful but only really found example for Java 1.6 / 1.7 nothing for 1.8.
 
-It is at this point the I should mention that I'm new to maven, but believe its more likely to be an AspectJ configuration / AWS build tools issue rather than Maven problem. 
+It's at this point that I should mention i'm new to maven but believe its more likely to be an AspectJ configuration / AWS build tools issue rather than Maven problem. 
 
 
 ### Build & Run
@@ -77,8 +77,5 @@ Then running the compiled jar
 ```
 java -jar Test.jar "a test message"
 ```
-
-
-
 
 Any advice would be greatly appreciated.
