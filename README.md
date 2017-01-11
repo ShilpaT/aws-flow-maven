@@ -1,6 +1,23 @@
 # aws-flow-maven
 Attempt to build an AWS flow application using Maven
 
+#RESOLUTION 
+
+This is now fine and working 
+
+Our problems were two fold.
+
+We had compiler arguments set to <compilerArgument>-proc:none</compilerArgument> this prevented the build from completing.
+
+Also within our aspectj-maven plugin we had set the execution to <phase>process-sources</phase> which appears to be the crux of our problem as this is preventing a good build being created and also not showing us the errors which were being generated as a result of including our compiler arguments.
+
+As a side note within the aspectj-maven-plugin we had set the targets to 1.6 this is not required. We tried as it appeared that eclipse may have been using these setting. Either way these properties seem to have no affect.
+
+We also changed the aspectj library from aws-java-sdk-swf-libraries to aws-swf-build-tools to keep it upto date.
+
+I hope this helps some weary travler.
+
+# ORIGINAL PROBLEM
 
 Has anyone been able to compile an application with Java 1.8 + AWS Flow + Maven?
 
