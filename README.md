@@ -17,6 +17,9 @@ We also changed the aspectj library from aws-java-sdk-swf-libraries to aws-swf-b
 
 I hope this helps some weary travler.
 
+This was with help from the guys at AWS forum 
+https://forums.aws.amazon.com/message.jspa?messageID=760211
+
 # ORIGINAL PROBLEM
 
 Has anyone been able to compile an application with Java 1.8 + AWS Flow + Maven?
